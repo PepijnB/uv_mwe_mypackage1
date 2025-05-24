@@ -1,0 +1,19 @@
+[project]
+name = "uv_mwe_mypackage1"
+version = "0.1.0"
+description = "Minimum Working Example of unexpected behavior"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "uv-mwe-mypackage2",
+]
+
+[build-system]
+requires = ["hatchling >= 1.26", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.uv.sources]
+uv-mwe-mypackage2 = { git = "https://github.com/PepijnB/uv_mwe_mypackage2.git" }
